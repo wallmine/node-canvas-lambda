@@ -32,13 +32,15 @@ Clone the repository and follow the steps below.
 ```zsh
 
 aws lambda publish-layer-version \
---layer-name "node12CanvasLib64" \
---zip-file "fileb://node12_canvas_lib64_layer.zip" \
+--profile logtail \
+--layer-name "node${VERSION}-canvas-chartjs-lib64" \
+--zip-file "fileb://${PWD}/node${VERSION}_canvas_lib64_layer.zip" \
 --description "Node canvas lib 64"
 
 aws lambda publish-layer-version \
---layer-name "node12Canvas" \
---zip-file "fileb://node12_canvas_layer.zip" \
+--profile logtail \
+--layer-name "node${VERSION}-canvas-chartjs" \
+--zip-file "fileb://${PWD}/node${VERSION}_canvas_layer.zip" \
 --description "A Lambda Layer which includes node canvas, chart.js, chartjs-node-canvas, chartjs-plugin-datalabels"
 
 ```
